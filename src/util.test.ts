@@ -17,7 +17,7 @@ describe("Utility functions", () => {
 
   it("extracts commit hash", () => {
     const rawUrl =
-      "https://github.com/paritytech/Evidences/raw/594f3f9015706f666180d54486a68ac6ee83ef7f/text%2F0005-coretime-interface-test.md";
-    expect(extractCommitHash(rawUrl)).toEqual("210dd4c3d4a83443e8e35e47b5f67a7f9dc0a9d1");
+      "https://github.com/davxy/polkadot-fellows-evidences/raw/594f3f9015706f666180d54486a68ac6ee83ef7f/evidence/davxy/0001-davxy-2024-H1.md";
+    expect(extractCommitHash(rawUrl)).toEqual("594f3f9015706f666180d54486a68ac6ee83ef7f");
   });
 });

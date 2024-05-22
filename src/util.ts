@@ -19,7 +19,7 @@ export const byteSize = (extrinsic: SubmittableExtrinsic): number =>
  * Extracts commit hash from GitHub's raw url.
  */
 export const extractCommitHash = (rawUrl: string): string => {
-  const match = rawUrl.match("raw/(.*)/text")?.[1];
+  const match = rawUrl.match("raw/(.*)/evidence")?.[1];
   if (match === undefined) throw new Error("Could not extract commit hash.");
   return match;
 };
