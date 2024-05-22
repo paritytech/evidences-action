@@ -1,0 +1,7 @@
+name: '@paritytech/rfc-action'
+description: 'A GitHub Action aiming to help in the process of the RFC proposal referenda.'
+author: 'Parity Technologies'
+
+runs:
+  using: node20
+  main: dist/index.js
