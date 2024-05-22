@@ -25,7 +25,7 @@ export const handleProposeSubmitCommand = async (requestState: RequestState): Pr
     `\n\n<details><summary>Instructions</summary>` +
     `\n\n1. Open one of the links.` +
     `\n\n2. Switch to the \`Submission\` tab.` +
-    `\n<img width="480px" src="https://raw.githubusercontent.com/paritytech/evidences-propose/main/src/images/submission_tab.png" />` +
+    `\n<img width="480px" src="https://raw.githubusercontent.com/paritytech/evidences-action/main/src/images/submission_tab.png" />` +
     `\n\n3. Adjust the transaction if needed.` +
     `\n\n4. Submit the Transaction` +
     `\n</details>\n\n---` +
