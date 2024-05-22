@@ -29,7 +29,7 @@ export const handleProposeSubmitCommand = async (requestState: RequestState): Pr
     `\n\n3. Adjust the transaction if needed.` +
     `\n\n4. Submit the Transaction` +
     `\n</details>\n\n---` +
-    `\n\nThey are based on commit hash [TODO](${
+    `\n\nThey are based on commit hash [${extractCommitHash(parseEvidenceResult.evidenceFileRawUrl)}](${
       parseEvidenceResult.evidenceFileRawUrl
     }).` +
     `\n\nThe hash of the evidence is: \`${parseEvidenceResult.evidenceHash}\`.`;
