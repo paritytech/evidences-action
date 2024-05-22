@@ -4,13 +4,12 @@ import { extractCommitHash, hashProposal } from "./util";
 
 describe("Utility functions", () => {
   describe("hashProposal", () => {
-    test("Properly hashes the RFC text", () => {
-      // https://raw.githubusercontent.com/polkadot-fellows/RFCs/c368187e2b80c9b76a399f30127e866f47594ae8/text/0014-improve-locking-mechanism-for-parachains.md
-      const rfcText = fs.readFileSync("src/examples/0014-improve-locking-mechanism-for-parachains.md").toString();
+    test("Properly hashes the Evidence text", () => {
+      // https://github.com/polkadot-fellows/Evidences/blob/594f3f9015706f666180d54486a68ac6ee83ef7f/evidence/davxy/0001-davxy-2024-H1.md
+      const rfcText = fs.readFileSync("src/examples/0001-davxy-2024-H1.md").toString();
 
-      // https://collectives.subsquare.io/fellowship/referendum/16
-      // The remark is: "RFC_APPROVE(0014,ba8418fc46d251acfdd39604c5fe6ea3d69ed464ed4113d50e82ea1c712a44fc)"
-      const expectedHash = "ba8418fc46d251acfdd39604c5fe6ea3d69ed464ed4113d50e82ea1c712a44fc";
+      // b2sum -l 256 0001-davxy-2024-H1.md
+      const expectedHash = "e06ac00a2d6d134d1ae51cbc1574ca719578af568a700054f352db356ce2e22c";
 
       expect(hashProposal(rfcText)).toEqual(expectedHash);
     });
