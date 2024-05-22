@@ -1,20 +1,21 @@
 {
-  "name": "@paritytech/rfc-propose",
-  "description": "A GitHub Action aiming to help in the creation of RFC proposal referenda.",
+  "name": "@paritytech/evidences-action",
+  "description": "A GitHub Action aiming to help in the process of the fellows evidences referenda.",
   "version": "0.0.0",
   "author": "Parity Technologies <admin@parity.io> (https://parity.io)",
   "private": true,
-  "homepage": "https://github.com/paritytech/rfc-propose",
+  "homepage": "https://github.com/paritytech/evidences-action",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/paritytech/rfc-propose.git"
+    "url": "git+https://github.com/paritytech/evidences-action.git"
   },
   "bugs": {
-    "url": "https://github.com/paritytech/rfc-propose/issues"
+    "url": "https://github.com/paritytech/evidences-action/issues"
   },
   "keywords": [
     "substrate",
-    "rfc"
+    "fellows",
+    "evidences"
   ],
   "main": "dist/index.js",
   "engines": {
