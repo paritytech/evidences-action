@@ -1,4 +1,4 @@
-name: RFC action
+name: Evidences action
 
 on:
   issue_comment:
@@ -9,12 +9,12 @@ permissions:
   contents: write
 
 jobs:
-  rfc-action:
-    name: Handle an RFC command
-    if: ${{ github.event.issue.pull_request && startsWith(github.event.comment.body, '/rfc') }}
+  evidences-action:
+    name: Handle an Evidence command
+    if: ${{ github.event.issue.pull_request && startsWith(github.event.comment.body, '/evidence') }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: paritytech/rfc-action@main
+      - uses: paritytech/evidences-action@main
     env:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
