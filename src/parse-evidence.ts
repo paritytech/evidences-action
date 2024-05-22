@@ -42,7 +42,7 @@ export const extractEvidenceResult = async (
     success: true,
     result: {
       evidenceFileRawUrl: evidenceFile.raw_url,
-      evidenceHash: hashProposal(rawText)
+      evidenceHash: hashProposal(rawText),
     },
   };
 };

@@ -8,7 +8,7 @@ export const handleCommand = async (opts: {
   requestState: RequestState;
   args: (string | undefined)[];
 }): Promise<RequestResult> => {
-  const { command, requestState, args } = opts;
+  const { command, requestState } = opts;
   if (command?.toLowerCase() === "help") {
     return {
       success: true,
