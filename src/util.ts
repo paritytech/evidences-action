@@ -4,7 +4,7 @@ import { blake2AsHex } from "@polkadot/util-crypto";
 import { RequestResult, RequestState } from "./types";
 
 /**
- * blake2-256 hash of the raw proposal text, as described in the [RFC process](https://github.com/polkadot-fellows/RFCs#process).
+ * blake2-256 hash of the raw proposal text, as described in the [Evidences process](hhttps://github.com/polkadot-fellows/Evidences/#process).
  * @returns The hash without a "0x" prefix.
  */
 export const hashProposal = (proposal: string): string => {
@@ -31,5 +31,5 @@ export const extractCommitHash = (rawUrl: string): string => {
 export const userProcessError = (requestState: RequestState, message: string): RequestResult & { success: false } =>
   ({
     success: false,
-    errorMessage: `@${requestState.requester} ${message} Please double check the [Process](https://github.com/polkadot-fellows/RFCs#process).`,
+    errorMessage: `@${requestState.requester} ${message} Please double check the [Process](https://github.com/polkadot-fellows/Evidences/#process).`,
   }) as const;

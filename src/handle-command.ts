@@ -1,8 +1,7 @@
-import { handleProcessCommand } from "./process";
-import { handleProposeCommand } from "./propose";
+import { handleProposeSubmitCommand } from "./propose-submit";
 import { RequestResult, RequestState } from "./types";
 
-const usageInstructions = "See [usage instructions](https://github.com/paritytech/rfc-action#usage).";
+const usageInstructions = "See [usage instructions](https://github.com/paritytech/evidences-action#usage).";
 
 export const handleCommand = async (opts: {
   command: string | undefined;
@@ -14,20 +13,16 @@ export const handleCommand = async (opts: {
     return {
       success: true,
       message:
-        "The RFC action aims to help with the creation of on-chain RFC referenda and with handling the RFC PRs." +
-        "\n\nThe main commands are `/rfc propose` and `/rfc process`.\n\n" +
+        "The Evidences action aims to help with the creation of on-chain Evidence extrinsics." +
+        "\n\nThe main command is `/evidences submit`.\n\n" +
         usageInstructions,
     };
   }
-  if (command?.toLowerCase() === "propose") {
-    return await handleProposeCommand(requestState);
-  }
-  if (command?.toLowerCase() === "process") {
-    const blockHash = args[0];
-    return await handleProcessCommand(requestState, blockHash);
+  if (command?.toLowerCase() === "submit") {
+    return await handleProposeSubmitCommand(requestState);
   }
   return {
     success: false,
-    errorMessage: "Unrecognized command. Expected one of: `help`, `propose`, `process`.\n\n" + usageInstructions,
+    errorMessage: "Unrecognized command. Expected one of: `help`, `submit`.\n\n" + usageInstructions,
   };
 };

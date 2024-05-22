@@ -3,8 +3,6 @@ import * as githubActions from "@actions/github";
 import { envVar } from "@eng-automation/js";
 import type { IssueCommentCreatedEvent } from "@octokit/webhooks-types";
 
-import { START_DATE } from "./constants";
-import { cron } from "./cron";
 import { handleCommand } from "./handle-command";
 import { GithubReactionType } from "./types";
 
@@ -12,10 +10,7 @@ export async function run(): Promise<void> {
   const { context } = githubActions;
   try {
     const octokitInstance = githubActions.getOctokit(envVar("GH_TOKEN"));
-    if (context.eventName === "schedule" || context.eventName === "workflow_dispatch") {
-      const { owner, repo } = context.repo;
-      return await cron(new Date(START_DATE), owner, repo, octokitInstance);
-    } else if (context.eventName !== "issue_comment") {
+    if (context.eventName !== "issue_comment") {
       throw new Error("The action is expected to be run on 'issue_comment' events only.");
     }
 
@@ -55,7 +50,7 @@ export async function run(): Promise<void> {
     } catch (e) {
       const logs = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
       await githubComment(
-        `@${requester} Handling the RFC command failed :(\nYou can open an issue [here](https://github.com/paritytech/rfc-propose/issues/new).\nSee the logs [here](${logs}).`,
+        `@${requester} Handling the Evidences command failed :(\nYou can open an issue [here](https://github.com/paritytech/evidences-action/issues/new).\nSee the logs [here](${logs}).`,
       );
       await githubEmojiReaction("confused");
       throw e;

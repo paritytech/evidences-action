@@ -12,26 +12,15 @@ On an Evidence Pull Request, add a comment starting with `/evidence`.
 
 ### Commands
 
-1. Propose
+1. Submit
 
-Proposes the creation of a referendum aiming to approve the given Evidence.
-
-```
-/evidence propose
-```
-
-Will result in a comment response with instructions to create an on-chain referendum.
-
-2. Process
-
-After the Evidence referendum was confirmed, it processes the Pull Request (by merging or closing it).
+Proposes the creation of an extrinsic that submits the evidence to the chain
 
 ```
-/evidence process <block hash of when the referendum was confirmed>
+/evidence submit
 ```
 
-If you're not sure where to get this block hash,
-send a `/evidence process` command and the action will respond with more instructions.
+Will result in a comment response with instructions to create the extrinsic.
 
 ## Configuration
 
